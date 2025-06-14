@@ -1,4 +1,4 @@
-package com.jesuskrastev.flind.theme
+package com.jesuskrastev.flind.core.theme
 
 import androidx.compose.ui.graphics.Color
 
