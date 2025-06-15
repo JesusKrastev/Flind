@@ -2,17 +2,17 @@ package com.jesuskrastev.flind.features.components
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AccountCircle
+import androidx.compose.material.icons.filled.Explore
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.Inbox
-import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.outlined.AccountCircle
-import androidx.compose.material.icons.outlined.Favorite
+import androidx.compose.material.icons.outlined.Explore
 import androidx.compose.material.icons.outlined.FavoriteBorder
 import androidx.compose.material.icons.outlined.Inbox
-import androidx.compose.material.icons.outlined.Search
 import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
+import androidx.compose.material3.NavigationBarItemDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Immutable
@@ -21,6 +21,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 
 @Composable
@@ -39,8 +40,8 @@ fun BottomNavigationBar(
 
     val items: List<NavigationItem> = listOf(
         NavigationItem(
-            selectedIcon = Icons.Filled.Search,
-            unselectedIcon = Icons.Outlined.Search,
+            selectedIcon = Icons.Filled.Explore,
+            unselectedIcon = Icons.Outlined.Explore,
             title = "Explore",
             onClick = {}
         ),
@@ -73,7 +74,7 @@ fun BottomNavigationBar(
             NavigationBarItem(
                 icon = {
                     Icon(
-                        imageVector = if(selected) item.selectedIcon else item.unselectedIcon,
+                        imageVector = if (selected) item.selectedIcon else item.unselectedIcon,
                         contentDescription = item.title,
                     )
                 },
@@ -86,6 +87,9 @@ fun BottomNavigationBar(
                 onClick = {
                     selectedPage = index
                 },
+                colors = NavigationBarItemDefaults.colors(
+                    indicatorColor = Color.Transparent
+                ),
             )
         }
     }
