@@ -246,7 +246,7 @@ fun FlindTheme(
 
     MaterialTheme(
         colorScheme = colorScheme,
+        typography = PoppinsTypography(),
         content = content,
     )
 }
-
